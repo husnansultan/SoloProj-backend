@@ -1,0 +1,6 @@
+INSERT INTO User (Order) Values(Food)
+INSERT INTO TRAINEE (traineeName, classroomID) Values ('Joe Bloggs' , 1)
+INSERT INTO TRAINEE (traineeName, classroomID) Values ('Jane Bloggs' , 1)
+INSERT INTO CLASSROOM (trainer) VALUES ('Matt Hunt')
+INSERT INTO TRAINEE (traineeName, classroomID) Values ('David Bloggs' , 2)
+INSERT INTO TRAINEE (traineeName, classroomID) Values ('Ceri Bloggs' , 2)
