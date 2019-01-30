@@ -24,7 +24,7 @@ public class User {
 
 	@OneToMany(mappedBy = "userid", cascade = CascadeType.ALL)
 	@JoinColumn(name = "userid")
-	private List<Order> orders = new ArrayList<>();
+	private List<Order> orders;
 
 	public User() {
 
