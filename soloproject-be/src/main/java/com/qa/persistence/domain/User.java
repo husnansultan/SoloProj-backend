@@ -1,53 +1,63 @@
 package com.qa.persistence.domain;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 @Entity
+@Table(name = "User")
 public class User {
 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	private Long userid;
+	@Column(name = "userId", nullable = false)
+	private Long userId;
 
-	private String name;
-	private String email;
+	@Size(min = 0, max = 32)
+	@Column(name = "userName")
+	private String userName;
+
+	@Size(min = 0, max = 32)
+	@Column(name = "password")
 	private String password;
+	
+	@Size(min = 0, max = 6)
+	@Column(name = "loginStatus")
+	private String loginStatus;
+	
+	
+//	@OneToMany(mappedBy="userId", cascade=CascadeType.ALL)
+//	private List<DBEntry> dbentries = new ArrayList<>();
+
 
 	public User() {
 
 	}
 
-	public User(String name, String email, String password) {
-		this.setName(name);
-		this.setEmail(email);
-		this.setPassword(password);
+	public User(String userName, String password) {
+		this.userName = userName;
+		this.password = password;
+
 	}
 
-	public List<Order> getOrders() {
-		return orders;
+	public Long getUserId() {
+		return userId;
 	}
 
-	public String getName() {
-		return name;
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public String getUserName() {
+		return userName;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getPassword() {
@@ -57,4 +67,5 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 }
