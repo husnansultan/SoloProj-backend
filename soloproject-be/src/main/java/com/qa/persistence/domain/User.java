@@ -20,10 +20,6 @@ public class User {
 	private String email;
 	private String password;
 
-	@OneToMany(mappedBy = "userid", cascade = CascadeType.ALL)
-	
-	private List<Order> orders;
-
 	public User() {
 
 	}

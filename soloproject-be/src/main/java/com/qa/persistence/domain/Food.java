@@ -30,7 +30,6 @@ public class Food {
 		return foodid;
 	}
 
-
 	public String getName() {
 		return name;
 	}
