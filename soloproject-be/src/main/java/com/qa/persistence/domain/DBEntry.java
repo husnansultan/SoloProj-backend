@@ -21,24 +21,20 @@ public class DBEntry {
 	private Long userId;
 
 	@Size(min = 0, max = 32)
-	@Column(name = "greekName")
-	private String greekName;
+	@Column(name = "foodName")
+	private String foodName;
 	
 	@Size(min = 0, max = 32)
-	@Column(name = "romanName")
-	private String romanName;
+	@Column(name = "category")
+	private String category;
 	
 	@Size(min = 0, max = 32)
-	@Column(name = "consort")
-	private String consort;
-	
-	@Size(min = 0, max = 32)
-	@Column(name = "residence")
-	private String residence;
+	@Column(name = "price")
+	private String price;
 	
 	@Size(min = 0, max = 1024)
-	@Column(name = "about")
-	private String about;
+	@Column(name = "descr")
+	private String descr;
 	
 	@Column( name = "image")
 	private String image;
@@ -48,13 +44,11 @@ public class DBEntry {
 
 	}
 
-	public DBEntry(String greekName, String romanName, String consort, 
-			String residence, String about, String image) {
-		this.greekName = greekName;
-		this.romanName = romanName;
-		this.consort = consort;
-		this.residence = residence;
-		this.about = about;
+	public DBEntry(String foodName, String category, String price, String descr, String image) {
+		this.foodName = foodName;
+		this.category = category;
+		this.price = price;
+		this.descr = descr;
 		this.image = image;
 
 	}
@@ -75,44 +69,36 @@ public class DBEntry {
 		this.userId = userId;
 	}
 
-	public String getGreekName() {
-		return greekName;
+	public String getFoodName() {
+		return foodName;
 	}
 
-	public void setGreekName(String greekName) {
-		this.greekName = greekName;
+	public void setFoodName(String foodName) {
+		this.foodName = foodName;
 	}
 
-	public String getRomanName() {
-		return romanName;
+	public String getCategory() {
+		return category;
 	}
 
-	public void setRomanName(String romanName) {
-		this.romanName = romanName;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
-	public String getConsort() {
-		return consort;
+	public String getPrice() {
+		return price;
 	}
 
-	public void setConsort(String consort) {
-		this.consort = consort;
+	public void setPrice(String price) {
+		this.price = price;
 	}
 
-	public String getResidence() {
-		return residence;
+	public String getDescr() {
+		return descr;
 	}
 
-	public void setResidence(String residence) {
-		this.residence = residence;
-	}
-
-	public String getAbout() {
-		return about;
-	}
-
-	public void setAbout(String about) {
-		this.about = about;
+	public void setDescr(String descr) {
+		this.descr = descr;
 	}
 
 	public String getImage() {

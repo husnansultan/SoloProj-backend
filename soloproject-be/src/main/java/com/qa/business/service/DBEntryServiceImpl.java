@@ -10,8 +10,8 @@ public class DBEntryServiceImpl implements DBEntryService {
 	private DBEntryRepository repo;
 	
 	@Override
-	public String getDBEntry(String greekName) {
-		return repo.getDBEntry(greekName);
+	public String getDBEntry(String foodName) {
+		return repo.getDBEntry(foodName);
 	}
 	
 	@Override
@@ -20,13 +20,13 @@ public class DBEntryServiceImpl implements DBEntryService {
 	}
 	
 	@Override
-	public String updateDBEntry(String greekName, String dbentry) {
-		return repo.updateDBEntry(greekName, dbentry);
+	public String updateDBEntry(String foodName, String dbentry) {
+		return repo.updateDBEntry(foodName, dbentry);
 	}
 	
 	@Override
-	public String removeDBEntry(String greekName) {
-		return repo.removeDBEntry(greekName);
+	public String removeDBEntry(String foodName) {
+		return repo.removeDBEntry(foodName);
 	}
 
 	public DBEntryRepository getRepo() {

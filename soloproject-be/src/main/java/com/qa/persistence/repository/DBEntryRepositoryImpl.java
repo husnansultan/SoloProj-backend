@@ -12,6 +12,7 @@ import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import com.qa.persistence.domain.DBEntry;
+import com.qa.util.JSONUtil;
 
 public class DBEntryRepositoryImpl implements DBEntryRepository{
 	
@@ -22,9 +23,9 @@ public class DBEntryRepositoryImpl implements DBEntryRepository{
 	private JSONUtil util;
 
 	@Override
-	public String getDBEntry(String greekName) {
-		Query query = manager.createQuery("Select a FROM DBEntry a WHERE a.greekName = :greekName");
-		query.setParameter("greekName", greekName);
+	public String getDBEntry(String foodName) {
+		Query query = manager.createQuery("Select a FROM DBEntry a WHERE a.foodName = :foodName");
+		query.setParameter("foodName", foodName);
 		@SuppressWarnings("unchecked")
 		Collection<DBEntry> entries = (Collection<DBEntry>) query.getResultList();
 		return util.getJSONForObject(entries);
@@ -34,9 +35,9 @@ public class DBEntryRepositoryImpl implements DBEntryRepository{
 		return manager.find(DBEntry.class, id);
 	}
 	
-	public Long getIdFromGreekName(String greekName) {
-		Query query = manager.createQuery("Select id FROM DBEntry a WHERE a.greekName = :greekName");
-		query.setParameter("greekName", greekName);
+	public Long getIdFromfoodName(String foodName) {
+		Query query = manager.createQuery("Select id FROM DBEntry a WHERE a.foodName = :foodName");
+		query.setParameter("foodName", foodName);
 		@SuppressWarnings("unchecked")
 		List<Long> entries = (List<Long>) query.getResultList();
 		long uID = entries.get(0);
@@ -53,8 +54,8 @@ public class DBEntryRepositoryImpl implements DBEntryRepository{
 	
 	@Override
 	@Transactional(REQUIRED)
-	public String updateDBEntry(String greekName, String dbentry) {
-		Long id= getIdFromGreekName(greekName);
+	public String updateDBEntry(String foodName, String dbentry) {
+		Long id= getIdFromfoodName(foodName);
 		DBEntry entryInDB = findDBEntry(id);
 		if (entryInDB != null) {
 			manager.remove(entryInDB);
@@ -66,8 +67,8 @@ public class DBEntryRepositoryImpl implements DBEntryRepository{
 
 	@Override
 	@Transactional(REQUIRED)
-	public String removeDBEntry(String greekName) {
-		Long id = getIdFromGreekName(greekName);
+	public String removeDBEntry(String foodName) {
+		Long id = getIdFromfoodName(foodName);
 		DBEntry entryInDB = findDBEntry(id);
 		if (entryInDB != null) {
 			manager.remove(entryInDB);

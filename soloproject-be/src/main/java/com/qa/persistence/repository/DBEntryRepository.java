@@ -2,9 +2,9 @@ package com.qa.persistence.repository;
 
 public interface DBEntryRepository {
 
-	String getDBEntry(String greekName);
+	String getDBEntry(String foodName);
 	String addDBEntry(String dbentry);
-	String updateDBEntry(String greekName, String dbentry);
-	String removeDBEntry(String greekName);
+	String updateDBEntry(String foodName, String dbentry);
+	String removeDBEntry(String foodName);
 
 }

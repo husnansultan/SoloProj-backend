@@ -17,11 +17,11 @@ public class DBEntryEndpoints {
 	@Inject
 	private DBEntryService service;
 
-	@Path("/getDBEntry/{greekName}")
+	@Path("/getDBEntry/{foodName}")
 	@GET
 	@Produces({ "application/json" })
-	public String getDBEntry(@PathParam("greekName") String greekName) {
-		return service.getDBEntry(greekName);
+	public String getDBEntry(@PathParam("foodName") String foodName) {
+		return service.getDBEntry(foodName);
 	}
 	
 	@Path("/addDBEntry/")
@@ -31,18 +31,18 @@ public class DBEntryEndpoints {
 		return service.addDBEntry(dbentry);
 	}
 
-	@Path("/updateDBEntry/{greekName}")
+	@Path("/updateDBEntry/{foodName}")
 	@PUT
 	@Produces({ "application/json" })
-	public String updateDBEntry(@PathParam("greekName") String greekName, String dbentry) {
-		return service.updateDBEntry(greekName, dbentry);
+	public String updateDBEntry(@PathParam("foodName") String foodName, String dbentry) {
+		return service.updateDBEntry(foodName, dbentry);
 	}
 
-	@Path("/removeDBEntry/{greekName}")
+	@Path("/removeDBEntry/{foodName}")
 	@DELETE
 	@Produces({ "application/json" })
-	public String removeDBEntry(@PathParam("greekName") String greekName) {
-		return service.removeDBEntry(greekName);
+	public String removeDBEntry(@PathParam("foodName") String foodName) {
+		return service.removeDBEntry(foodName);
 	}
 	
 	public DBEntryService getService() {
