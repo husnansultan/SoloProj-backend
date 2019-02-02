@@ -12,7 +12,6 @@ import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import com.qa.persistence.domain.DBEntry;
-import com.qa.persistence.domain.User;
 import com.qa.util.JSONUtil;
 
 public class DBEntryRepositoryImpl implements DBEntryRepository{
@@ -26,6 +25,7 @@ public class DBEntryRepositoryImpl implements DBEntryRepository{
 	@Override
 	public String getAllDBEntry() {
 		Query query = manager.createQuery("SELECT d FROM DBEntry d");
+		@SuppressWarnings("unchecked")
 		Collection<DBEntry> dbentry = (Collection<DBEntry>)query.getResultList();
 		return util.getJSONForObject(dbentry);
 	}

@@ -43,6 +43,7 @@ public class UserRepositoryImpl implements UserRepository {
 	@Override
 	public String getAllUsers() {
 		Query query = manager.createQuery("SELECT u FROM User u");
+		@SuppressWarnings("unchecked")
 		Collection<User> users = (Collection<User>)query.getResultList();
 		return util.getJSONForObject(users);
 	}
