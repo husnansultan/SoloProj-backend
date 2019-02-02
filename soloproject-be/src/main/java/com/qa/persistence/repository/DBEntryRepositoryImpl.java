@@ -12,6 +12,7 @@ import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import com.qa.persistence.domain.DBEntry;
+import com.qa.persistence.domain.User;
 import com.qa.util.JSONUtil;
 
 public class DBEntryRepositoryImpl implements DBEntryRepository{
@@ -21,7 +22,14 @@ public class DBEntryRepositoryImpl implements DBEntryRepository{
 
 	@Inject
 	private JSONUtil util;
-
+	
+	@Override
+	public String getAllDBEntry() {
+		Query query = manager.createQuery("SELECT d FROM DBEntry d");
+		Collection<DBEntry> dbentry = (Collection<DBEntry>)query.getResultList();
+		return util.getJSONForObject(dbentry);
+	}
+	
 	@Override
 	public String getDBEntry(String foodName) {
 		Query query = manager.createQuery("Select a FROM DBEntry a WHERE a.foodName = :foodName");
@@ -87,5 +95,4 @@ public class DBEntryRepositoryImpl implements DBEntryRepository{
 	public void setUtil(JSONUtil util) {
 		this.util = util;
 	}
-
 }

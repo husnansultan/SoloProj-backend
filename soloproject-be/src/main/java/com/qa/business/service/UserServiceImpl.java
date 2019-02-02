@@ -8,17 +8,22 @@ public class UserServiceImpl implements UserService {
 
 	@Inject
 	private UserRepository repo;
-	
+
+	@Override
+	public String getAllUsers() {
+		return repo.getAllUsers();
+	}
+
 	@Override
 	public String addUser(String user) {
 		return repo.addUser(user);
 	}
-	
+
 	@Override
 	public String updateUser(String userName, String user) {
 		return repo.updateUser(userName, user);
 	}
-	
+
 	@Override
 	public String removeUser(String userName) {
 		return repo.removeUser(userName);

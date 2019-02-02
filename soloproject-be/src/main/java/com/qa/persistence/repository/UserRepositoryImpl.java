@@ -3,6 +3,7 @@ package com.qa.persistence.repository;
 import static javax.transaction.Transactional.TxType.REQUIRED;
 import static javax.transaction.Transactional.TxType.SUPPORTS;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.enterprise.inject.Default;
@@ -37,6 +38,13 @@ public class UserRepositoryImpl implements UserRepository {
 		List<Long> entries = (List<Long>) query.getResultList();
 		long uID = entries.get(0);
 		return uID;
+	}
+	
+	@Override
+	public String getAllUsers() {
+		Query query = manager.createQuery("SELECT u FROM User u");
+		Collection<User> users = (Collection<User>)query.getResultList();
+		return util.getJSONForObject(users);
 	}
 	
 	@Override

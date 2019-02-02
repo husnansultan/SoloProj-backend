@@ -6,5 +6,6 @@ public interface DBEntryService {
 	String addDBEntry(String dbentry);
 	String updateDBEntry(String foodName, String dbentry);
 	String removeDBEntry(String foodName);
+	String getAllDBEntry();
 
 }

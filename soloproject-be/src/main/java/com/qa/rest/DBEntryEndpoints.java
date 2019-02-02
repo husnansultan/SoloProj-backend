@@ -17,6 +17,13 @@ public class DBEntryEndpoints {
 	@Inject
 	private DBEntryService service;
 
+	@Path("getAllDBEntry")
+	@GET
+	@Produces({ "application/json" })
+	public String getAllDBEntry() {
+		return service.getAllDBEntry();
+	}
+	
 	@Path("/getDBEntry/{foodName}")
 	@GET
 	@Produces({ "application/json" })

@@ -2,6 +2,7 @@ package com.qa.rest;
 
 import javax.inject.Inject;
 import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
@@ -15,6 +16,13 @@ public class UserEndpoints {
 	
 	@Inject
 	private UserService service;
+	
+	@Path("getAllUsers")
+	@GET
+	@Produces({ "application/json" })
+	public String getAllUsers() {
+		return service.getAllUsers();
+	}
 	
 	@Path("/addUser/")
 	@POST

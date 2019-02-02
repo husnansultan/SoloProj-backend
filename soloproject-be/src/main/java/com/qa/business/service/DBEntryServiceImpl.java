@@ -10,6 +10,11 @@ public class DBEntryServiceImpl implements DBEntryService {
 	private DBEntryRepository repo;
 	
 	@Override
+	public String getAllDBEntry() {
+		return repo.getAllDBEntry();
+	}
+	
+	@Override
 	public String getDBEntry(String foodName) {
 		return repo.getDBEntry(foodName);
 	}
