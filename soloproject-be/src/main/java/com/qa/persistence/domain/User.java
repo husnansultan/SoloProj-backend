@@ -1,11 +1,16 @@
 package com.qa.persistence.domain;
 
+import java.util.Collection;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 import javax.validation.constraints.Size;
 
 @Entity
@@ -30,9 +35,7 @@ public class User {
 	private String loginStatus;
 	
 	
-//	@OneToMany(mappedBy="userId", cascade=CascadeType.ALL)
-//	private List<DBEntry> dbentries = new ArrayList<>();
-
+	private Collection<DBEntry> dbentries;
 
 	public User() {
 
