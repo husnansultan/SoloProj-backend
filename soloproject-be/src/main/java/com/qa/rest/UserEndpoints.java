@@ -24,6 +24,13 @@ public class UserEndpoints {
 		return service.getAllUsers();
 	}
 	
+	@Path("/getUser/{userName}")
+	@GET
+	@Produces({ "application/json" })
+	public String getUser(@PathParam("userName") String userName) {
+		return service.getUser(userName);
+	}
+	
 	@Path("/addUser/")
 	@POST
 	@Produces({ "application/json" })

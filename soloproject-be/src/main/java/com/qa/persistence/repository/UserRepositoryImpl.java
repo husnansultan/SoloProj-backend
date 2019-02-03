@@ -31,12 +31,21 @@ public class UserRepositoryImpl implements UserRepository {
 		return manager.find(User.class, userId);
 	}
 	
-	public Long getIdFromUserName(String userName) {
-		Query query = manager.createQuery("Select userId FROM User a WHERE a.userName = :userName");
+	@Override
+	public String getUser(String userName) {
+		Query query = manager.createQuery("Select u FROM User u WHERE u.userName = :userName");
 		query.setParameter("userName", userName);
 		@SuppressWarnings("unchecked")
-		List<Long> entries = (List<Long>) query.getResultList();
-		long uID = entries.get(0);
+		Collection<User> users = (Collection<User>) query.getResultList();
+		return util.getJSONForObject(users);
+	}
+	
+	public Long getIdFromUserName(String userName) {
+		Query query = manager.createQuery("Select userId FROM User u WHERE u.userName = :userName");
+		query.setParameter("userName", userName);
+		@SuppressWarnings("unchecked")
+		List<Long> users = (List<Long>) query.getResultList();
+		long uID = users.get(0);
 		return uID;
 	}
 	

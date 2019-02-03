@@ -6,5 +6,6 @@ public interface UserService {
 	String updateUser(String userName, String user);
 	String removeUser(String userName);
 	String getAllUsers();
+	String getUser(String userName);
 
 }

@@ -29,18 +29,13 @@ public class User {
 	@Size(min = 0, max = 6)
 	@Column(name = "loginStatus")
 	private String loginStatus;
-	
-	
-//	private Collection<DBEntry> dbentries;
 
 	public User() {
-
 	}
 
 	public User(String userName, String password) {
 		this.userName = userName;
 		this.password = password;
-
 	}
 
 	public Long getUserId() {

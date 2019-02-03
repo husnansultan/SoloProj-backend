@@ -19,9 +19,7 @@ public class DBEntry {
 	@Id
 	@Column(name = "id", nullable = false)
 	private Long id;
-	
-//	@ManyToOne(fetch=FetchType.LAZY)
-//	@JoinColumn(name="userId")
+
 	@Column(name = "userId")
 	private Long userId;
 

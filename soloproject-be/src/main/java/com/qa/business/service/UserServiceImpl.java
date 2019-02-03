@@ -13,6 +13,11 @@ public class UserServiceImpl implements UserService {
 	public String getAllUsers() {
 		return repo.getAllUsers();
 	}
+	
+	@Override
+	public String getUser(String userName) {
+		return repo.getUser(userName);
+	}
 
 	@Override
 	public String addUser(String user) {
