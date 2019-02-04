@@ -1,4 +1,4 @@
-INSERT INTO DBENTRY (id, userId, foodName, category, price, descr, image) VALUES (1, 1, 'Chicken Pakora', 'Starter', '12', 'Zchicken covered in bater.', 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Jupiter_Smyrna_Louvre_Ma13.jpg/220px-Jupiter_Smyrna_Louvre_Ma13.jpg')
-INSERT INTO DBENTRY (id, userId, foodName, category, price, descr, image) VALUES (2, 2, 'Veg Pakora', 'Starter', '10', 'Zvegetables in covered in bater.', 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/NAMA_Aphrodite_Syracuse.jpg/220px-NAMA_Aphrodite_Syracuse.jpg')
+INSERT INTO DBENTRY (id, userId, foodName, category, price, descr) VALUES (1, 1, 'Chicken Pakora', 'Starter', '12', 'Zchicken covered in bater.')
+INSERT INTO DBENTRY (id, userId, foodName, category, price, descr) VALUES (2, 2, 'Veg Pakora', 'Starter', '10', 'Zvegetables in covered in bater.')
 INSERT INTO USER (userId, userName, password, loginStatus) VALUES (1, 'johnsmith', 'password', true)
 INSERT INTO USER (userId, userName, password, loginStatus) VALUES (2, 'janedoe', 'password2', false)

@@ -38,21 +38,16 @@ public class DBEntry {
 	@Size(min = 0, max = 1024)
 	@Column(name = "descr")
 	private String descr;
-	
-	@Column( name = "image")
-	private String image;
-	
 
 	public DBEntry() {
 
 	}
 
-	public DBEntry(String foodName, String category, String price, String descr, String image) {
+	public DBEntry(String foodName, String category, String price, String descr) {
 		this.foodName = foodName;
 		this.category = category;
 		this.price = price;
 		this.descr = descr;
-		this.image = image;
 
 	}
 
@@ -102,14 +97,6 @@ public class DBEntry {
 
 	public void setDescr(String descr) {
 		this.descr = descr;
-	}
-
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
 	}
 	
 }
